@@ -11,7 +11,13 @@ npm install
 Setup a .env file with the following variables, e.g.:
 
 ```
-MONGO_URL = mongodb+srv://<username>:<password>@cluster0.abcdc.mongodb.net/dbname
+PORT
+STAGE
+DB_HOST
+DB_USER
+DB_PW
+ORGANIZATION
+
 ```
 
 ### Compiles and hot-reloads for development
