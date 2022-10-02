@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan"); //better debugging
 const cors = require("cors");
 //allow using a .env file
-require("dotenv").config();   
+require("dotenv").config();
 
 //creates a new instance of express application
 const app = express();
@@ -15,7 +15,7 @@ app.use(cors({
 
 //sets up mongoose for the mongoDB connection
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}/`)
   .then(() => {
     console.log("Database connection Success!");
   })
@@ -31,8 +31,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //import routes
-const primaryDataRoute  = require('./routes/primaryData');
-const eventsDataRoute  = require('./routes/eventsData');
+const primaryDataRoute = require('./routes/primaryData');
+const eventsDataRoute = require('./routes/eventsData');
 
 //setup middle ware for routes
 app.use('/primaryData', primaryDataRoute);

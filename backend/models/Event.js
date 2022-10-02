@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let EventSchema = new Schema({
+let EventSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     organizationId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -42,4 +42,7 @@ let EventSchema = new Schema({
     }]
 });
 
-module.exports = mongoose.Model("Event", EventSchema, "events")
+module.exports = mongoose.model("Event", EventSchema, "events")
+
+
+

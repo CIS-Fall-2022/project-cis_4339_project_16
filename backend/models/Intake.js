@@ -46,4 +46,4 @@ let IntakeSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.Model("Intake", IntakeSchema, "intakes")
+module.exports = mongoose.model("Intake", IntakeSchema, "intakes")

@@ -8,4 +8,4 @@ let OrganizationSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.Model("Organization", OrganizationSchema, "organizations")
+module.exports = mongoose.model("Organization", OrganizationSchema, "organizations")
