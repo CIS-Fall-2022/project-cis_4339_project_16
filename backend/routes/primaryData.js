@@ -1,33 +1,32 @@
 const express = require("express");
 const router = express.Router();
+const CACHE = require("../cache/cache")
 
 //importing data model schemas
 let Intake = require("../models/Intake");
+let Event = require("../models/Event");
 
 //GET all entries
 router.get("/", (req, res, next) => {
-    Intake.find(
-        (error, data) => {
-            if (error) {
-                return next(error);
-            } else {
-                res.json(data);
-            }
+    Intake.find({ organizationId: CACHE.organizationId }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
         }
+    }
     ).sort({ 'updatedAt': -1 }).limit(10);
 });
 
 //GET single entry by ID
 router.get("/id/:id", (req, res, next) => {
-    Intake.find(
-        { _id: req.params.id },
-        (error, data) => {
-            if (error) {
-                return next(error);
-            } else {
-                res.json(data);
-            }
+    Intake.find({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
         }
+    }
     );
 });
 
@@ -42,8 +41,7 @@ router.get("/search/", (req, res, next) => {
             "phoneNumbers.primaryPhone": { $regex: `^${req.query["phoneNumbers.primaryPhone"]}`, $options: "i" }
         }
     };
-    Intake.find(
-        dbQuery,
+    Intake.find({ organizationId: CACHE.organizationId, ...dbQuery },
         (error, data) => {
             if (error) {
                 return next(error);
@@ -56,20 +54,24 @@ router.get("/search/", (req, res, next) => {
 
 //GET events for a single client
 router.get("/events/:id", (req, res, next) => {
-
+    Event.find({ attendees: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    });
 });
 
 //POST
 router.post("/", (req, res, next) => {
-    Intake.create(
-        req.body,
-        (error, data) => {
-            if (error) {
-                return next(error);
-            } else {
-                res.json(data);
-            }
+    Intake.create({ organizationId: CACHE.organizationId, ...req.body }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
         }
+    }
     );
     Intake.createdAt;
     Intake.updatedAt;
@@ -78,17 +80,24 @@ router.post("/", (req, res, next) => {
 
 //PUT update (make sure req body doesn't have the id)
 router.put("/:id", (req, res, next) => {
-    Intake.findOneAndUpdate(
-        { _id: req.params.id },
-        req.body,
-        (error, data) => {
-            if (error) {
-                return next(error);
-            } else {
-                res.json(data);
-            }
+    Intake.findOneAndUpdate({ _id: req.params.id, organizationId: CACHE.organizationId }, req.body, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
         }
+    }
     );
+});
+
+router.delete("/:id", (req, res, next) => {
+    Intake.deleteOne({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    });
 });
 
 module.exports = router;

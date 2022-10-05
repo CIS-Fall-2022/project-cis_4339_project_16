@@ -40,6 +40,8 @@ let EventSchema = new mongoose.Schema({
     attendees: [{
         type: String
     }]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model("Event", EventSchema, "events")
