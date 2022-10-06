@@ -1331,6 +1331,164 @@
 					"body": "{\n    \"acknowledged\": true,\n    \"deletedCount\": 1\n}"
 				}
 			]
+		},
+		{
+			"name": "Get organization name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/organizationData/name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"organizationData",
+						"name"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get organization name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/organizationData/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"organizationData",
+								"name"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-i/JW9Pi/BoKzqA7iDNQd6iCZjIk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:05:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"WWF\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dashboardData/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboardData",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get dashboard",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/dashboardData/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"dashboardData",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9e-zJvn+CZadFVQ8hqbcdDhIX56/HU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:35:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Covid Vaccinations\",\n        \"date\": \"2022-08-24T08:38:40.850Z\",\n        \"numClients\": 2\n    },\n    {\n        \"name\": \"Savings Awareness\",\n        \"date\": \"2022-09-01T13:33:10.745Z\",\n        \"numClients\": 3\n    }\n]"
+				}
+			]
 		}
 	]
 }
