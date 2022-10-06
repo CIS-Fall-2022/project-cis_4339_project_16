@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose")
 const CACHE = require("../cache/cache")
 
-//importing data model schemas
+// import data model schemas
 let Intake = require("../models/Intake");
 let Event = require("../models/Event");
 
@@ -31,7 +31,7 @@ router.get("/id/:id", (req, res, next) => {
     );
 });
 
-//GET entries based on search query
+// GET entries based on search query
 //Ex: '...?firstName=Bob&lastName=&searchBy=name' 
 router.get("/search/", (req, res, next) => {
     let dbQuery = "";
