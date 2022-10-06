@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose")
 const CACHE = require("../cache/cache")
 
 //importing data model schemas
 let Intake = require("../models/Intake");
 let Event = require("../models/Event");
 
-//GET all entries
+// GET all entries of intakes
 router.get("/", (req, res, next) => {
     Intake.find({ organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
@@ -18,9 +19,9 @@ router.get("/", (req, res, next) => {
     ).sort({ 'updatedAt': -1 }).limit(10);
 });
 
-//GET single entry by ID
+// GET single intake entry by ID
 router.get("/id/:id", (req, res, next) => {
-    Intake.find({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+    Intake.find({ _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -52,7 +53,7 @@ router.get("/search/", (req, res, next) => {
     );
 });
 
-//GET events for a single client
+// GET events for a single client
 router.get("/events/:id", (req, res, next) => {
     Event.find({ attendees: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
@@ -63,24 +64,23 @@ router.get("/events/:id", (req, res, next) => {
     });
 });
 
-//POST
+// POST create an intake
 router.post("/", (req, res, next) => {
-    Intake.create({ organizationId: CACHE.organizationId, ...req.body }, (error, data) => {
+    Intake.create({ _id: mongoose.Types.ObjectId(), organizationId: CACHE.organizationId, ...req.body }, (error, data) => {
         if (error) {
             return next(error);
         } else {
             res.json(data);
         }
-    }
-    );
+    });
     Intake.createdAt;
     Intake.updatedAt;
     Intake.createdAt instanceof Date;
 });
 
-//PUT update (make sure req body doesn't have the id)
+// PUT update (make sure req body doesn't have the id)
 router.put("/:id", (req, res, next) => {
-    Intake.findOneAndUpdate({ _id: req.params.id, organizationId: CACHE.organizationId }, req.body, (error, data) => {
+    Intake.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId }, req.body, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -90,8 +90,9 @@ router.put("/:id", (req, res, next) => {
     );
 });
 
+// DELETE an intake by ID
 router.delete("/:id", (req, res, next) => {
-    Intake.deleteOne({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+    Intake.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
             return next(error);
         } else {

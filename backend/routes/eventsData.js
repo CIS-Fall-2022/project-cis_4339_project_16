@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose")
 const CACHE = require("../cache/cache")
 let Event = require("../models/Event");
 
-//GET all entries
+// GET all entries of events
 router.get("/", (req, res, next) => {
     Event.find({ organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
@@ -15,7 +16,7 @@ router.get("/", (req, res, next) => {
     ).sort({ 'updatedAt': -1 }).limit(10);
 });
 
-//GET single entry by ID
+// GET single event entry by ID
 router.get("/id/:id", (req, res, next) => {
     Event.find({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
@@ -26,7 +27,7 @@ router.get("/id/:id", (req, res, next) => {
     })
 });
 
-//GET entries based on search query
+// GET entries based on search query
 //Ex: '...?eventName=Food&searchBy=name' 
 router.get("/search/", (req, res, next) => {
     let dbQuery = "";
@@ -46,7 +47,7 @@ router.get("/search/", (req, res, next) => {
     });
 });
 
-//GET events for which a client is signed up
+// GET events for which a client is signed up
 router.get("/client/:id", (req, res, next) => {
     Event.find({ attendees: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
@@ -57,9 +58,9 @@ router.get("/client/:id", (req, res, next) => {
     });
 });
 
-//POST
+// POST create an event
 router.post("/", (req, res, next) => {
-    Event.create({ organizationId: CACHE.organizationId, ...req.body }, (error, data) => {
+    Event.create({ _id: mongoose.Types.ObjectId(), organizationId: CACHE.organizationId, ...req.body }, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -69,9 +70,9 @@ router.post("/", (req, res, next) => {
     );
 });
 
-//PUT
+// PUT update an event
 router.put("/:id", (req, res, next) => {
-    Event.findOneAndUpdate({ _id: req.params.id, organizationId: CACHE.organizationId }, req.body, (error, data) => {
+    Event.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId }, req.body, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -83,32 +84,24 @@ router.put("/:id", (req, res, next) => {
 
 //PUT add attendee to event
 router.put("/addAttendee/:id", (req, res, next) => {
-    //only add attendee if not yet signed uo
-    Event.find({ _id: req.params.id, organizationId: CACHE.organizationId, attendees: req.body.attendee }, (error, data) => {
-        if (error) {
-            return next(error);
-        } else {
-            if (data.length == 0) {
-                Event.updateOne(
-                    { _id: req.params.id },
-                    { $push: { attendees: req.body.attendee } },
-                    (error, data) => {
-                        if (error) {
-                            consol
-                            return next(error);
-                        } else {
-                            res.json(data);
-                        }
-                    }
-                );
+    // only add attendee if not yet signed up
+    Event.updateOne(
+        { _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId },
+        // $addToSet only adds if it doesn't exist
+        { $addToSet: { attendees: req.body.attendee } },
+        (error, data) => {
+            if (error) {
+                return next(error);
+            } else {
+                res.json(data);
             }
         }
-    });
-
+    );
 });
 
+// DELETE an event by ID
 router.delete("/:id", (req, res, next) => {
-    Event.deleteOne({ _id: req.params.id, organizationId: CACHE.organizationId }, (error, data) => {
+    Event.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id), organizationId: CACHE.organizationId }, (error, data) => {
         if (error) {
             return next(error);
         } else {

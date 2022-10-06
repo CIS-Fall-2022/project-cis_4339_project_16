@@ -1,0 +1,1336 @@
+{
+	"info": {
+		"_postman_id": "cc33a7a2-fa2f-4dac-8546-299706ca10af",
+		"name": "Backend API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eventdata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventdata"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all events",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventdata"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "774"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"306-160cHCLjw7/8Np5AQLIXWZaWXzs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:26:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"5324 6th St\",\n            \"line2\": \"\",\n            \"city\": \"Austin\",\n            \"county\": \"Travis\",\n            \"zip\": \"78741\"\n        },\n        \"_id\": \"633e54796fc501c6dc6c5803\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Savings Awareness\",\n        \"services\": [\n            \"Spread Awareness\"\n        ],\n        \"date\": \"1988-04-09T13:33:10.745Z\",\n        \"description\": \"Spread awareness about saving money.\",\n        \"attendees\": [\n            \"Tim\",\n            \"Mike\"\n        ],\n        \"createdAt\": \"2022-10-06T04:07:21.765Z\",\n        \"updatedAt\": \"2022-10-06T04:24:02.248Z\",\n        \"__v\": 0\n    },\n    {\n        \"address\": {\n            \"line1\": \"100 Main St\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77000\"\n        },\n        \"_id\": \"633bb702eb4079e3330de913\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Covid Vaccinations\",\n        \"services\": [\n            \"Facilitation\"\n        ],\n        \"date\": \"2002-06-24T08:38:40.850Z\",\n        \"description\": \"Get covid vaccination for free!\",\n        \"attendees\": [\n            \"Hank\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get event by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eventData/id/633bb702eb4079e3330de913",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"id",
+						"633bb702eb4079e3330de913"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get event by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData/id/633bb702eb4079e3330de913",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"id",
+								"633bb702eb4079e3330de913"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"152-QNvF97Dh3A/CCLCryXljEkbRM7Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:26:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"100 Main St\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77000\"\n        },\n        \"_id\": \"633bb702eb4079e3330de913\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Covid Vaccinations\",\n        \"services\": [\n            \"Facilitation\"\n        ],\n        \"date\": \"2002-06-24T08:38:40.850Z\",\n        \"description\": \"Get covid vaccination for free!\",\n        \"attendees\": [\n            \"Hank\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get event entries by search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eventData/search?eventName=Savings%20Awareness&searchBy=name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"search"
+					],
+					"query": [
+						{
+							"key": "eventName",
+							"value": "Savings%20Awareness"
+						},
+						{
+							"key": "searchBy",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get event entries by search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData/search?eventName=Savings%20Awareness&searchBy=name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"search"
+							],
+							"query": [
+								{
+									"key": "eventName",
+									"value": "Savings%20Awareness"
+								},
+								{
+									"key": "searchBy",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "437"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b5-JxmlsSv9MAA0R/73VvtjHOANcp8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:26:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"5324 6th St\",\n            \"line2\": \"\",\n            \"city\": \"Austin\",\n            \"county\": \"Travis\",\n            \"zip\": \"78741\"\n        },\n        \"_id\": \"633e54796fc501c6dc6c5803\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Savings Awareness\",\n        \"services\": [\n            \"Spread Awareness\"\n        ],\n        \"date\": \"1988-04-09T13:33:10.745Z\",\n        \"description\": \"Spread awareness about saving money.\",\n        \"attendees\": [\n            \"Tim\",\n            \"Mike\"\n        ],\n        \"createdAt\": \"2022-10-06T04:07:21.765Z\",\n        \"updatedAt\": \"2022-10-06T04:24:02.248Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get events for which a client is signed up",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eventData/client/Hank",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"client",
+						"Hank"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get events for which a client is signed up",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData/client/Hank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"client",
+								"Hank"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"152-QNvF97Dh3A/CCLCryXljEkbRM7Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:26:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"100 Main St\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77000\"\n        },\n        \"_id\": \"633bb702eb4079e3330de913\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Covid Vaccinations\",\n        \"services\": [\n            \"Facilitation\"\n        ],\n        \"date\": \"2002-06-24T08:38:40.850Z\",\n        \"description\": \"Get covid vaccination for free!\",\n        \"attendees\": [\n            \"Hank\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create an event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventName\": \"Savings Awareness\",\r\n  \"services\": [\r\n    \"Spread Awareness\"\r\n  ],\r\n  \"date\": \"1988-04-09T13:33:10.745Z\",\r\n  \"address\": {\r\n    \"line1\": \"5324 6th St\",\r\n    \"line2\": \"\",\r\n    \"city\": \"Austin\",\r\n    \"county\": \"Travis\",\r\n    \"zip\": \"78741\"\r\n  },\r\n  \"description\": \"Spread awareness about saving money.\",\r\n  \"attendees\": [\r\n    \"Tim\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eventData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create an event",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"eventName\": \"Savings Awareness\",\r\n  \"services\": [\r\n    \"Spread Awareness\"\r\n  ],\r\n  \"date\": \"1988-04-09T13:33:10.745Z\",\r\n  \"address\": {\r\n    \"line1\": \"5324 6th St\",\r\n    \"line2\": \"\",\r\n    \"city\": \"Austin\",\r\n    \"county\": \"Travis\",\r\n    \"zip\": \"78741\"\r\n  },\r\n  \"description\": \"Spread awareness about saving money.\",\r\n  \"attendees\": [\r\n    \"Tim\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/eventData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "428"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ac-Ho74AEppRb7CcmNj1UD1WT3Ybg4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:07:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"633e54796fc501c6dc6c5803\",\n    \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n    \"eventName\": \"Savings Awareness\",\n    \"services\": [\n        \"Spread Awareness\"\n    ],\n    \"date\": \"1988-04-09T13:33:10.745Z\",\n    \"address\": {\n        \"line1\": \"5324 6th St\",\n        \"line2\": \"\",\n        \"city\": \"Austin\",\n        \"county\": \"Travis\",\n        \"zip\": \"78741\"\n    },\n    \"description\": \"Spread awareness about saving money.\",\n    \"attendees\": [\n        \"Tim\"\n    ],\n    \"createdAt\": \"2022-10-06T04:07:21.765Z\",\n    \"updatedAt\": \"2022-10-06T04:07:21.765Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventName\": \"Savings Awareness\",\r\n  \"services\": [\r\n    \"Spread Awareness\"\r\n  ],\r\n  \"date\": \"1988-04-09T13:33:10.745Z\",\r\n  \"address\": {\r\n    \"line1\": \"5324 6th St\",\r\n    \"line2\": \"\",\r\n    \"city\": \"Austin\",\r\n    \"county\": \"Travis\",\r\n    \"zip\": \"78741\"\r\n  },\r\n  \"description\": \"Spread awareness about saving money.\",\r\n  \"attendees\": [\r\n    \"Tim\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eventData/633e54796fc501c6dc6c5803",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"633e54796fc501c6dc6c5803"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an event",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"eventName\": \"Savings Awareness\",\r\n  \"services\": [\r\n    \"Spread Awareness\"\r\n  ],\r\n  \"date\": \"1988-04-09T13:33:10.745Z\",\r\n  \"address\": {\r\n    \"line1\": \"5324 6th St\",\r\n    \"line2\": \"\",\r\n    \"city\": \"Austin\",\r\n    \"county\": \"Travis\",\r\n    \"zip\": \"78741\"\r\n  },\r\n  \"description\": \"Spread awareness about saving money.\",\r\n  \"attendees\": [\r\n    \"Tim\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/eventData/633e54796fc501c6dc6c5803",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"633e54796fc501c6dc6c5803"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "428"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ac-X1eMSK+cEui7WTVCw7P9sQKNZHw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:12:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"address\": {\n        \"line1\": \"5324 6th St\",\n        \"line2\": \"\",\n        \"city\": \"Austin\",\n        \"county\": \"Travis\",\n        \"zip\": \"78741\"\n    },\n    \"_id\": \"633e54796fc501c6dc6c5803\",\n    \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n    \"eventName\": \"Savings Awareness\",\n    \"services\": [\n        \"Spread Awareness\"\n    ],\n    \"date\": \"1988-04-09T13:33:10.745Z\",\n    \"description\": \"Spread awareness about saving money.\",\n    \"attendees\": [\n        \"Tim\"\n    ],\n    \"createdAt\": \"2022-10-06T04:07:21.765Z\",\n    \"updatedAt\": \"2022-10-06T04:07:21.765Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Add attendee to event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"attendee\": \"Mike\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/eventData/addAttendee/633e54796fc501c6dc6c5803",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"addAttendee",
+						"633e54796fc501c6dc6c5803"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add attendee to event",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"attendee\": \"Mike\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/eventData/addAttendee/633e54796fc501c6dc6c5803",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"addAttendee",
+								"633e54796fc501c6dc6c5803"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-XE4LqSKK8lMBgnDPfq7vp2yCSG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:24:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"modifiedCount\": 1,\n    \"upsertedId\": null,\n    \"upsertedCount\": 0,\n    \"matchedCount\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Remove an event by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/eventData/633e58b0eb4079e3330de94d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"eventData",
+						"633e58b0eb4079e3330de94d"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/eventData/633e58b0eb4079e3330de94d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"eventData",
+								"633e58b0eb4079e3330de94d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-fgR5yLHQ1Hpp6zDESHaY9wJreYE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:25:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"deletedCount\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all intakes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/primaryData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all intakes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/primaryData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "771"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"303-oy4cgjQbjuisRtbRMG03H1jYq80\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:29:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"1300 Crossing PL\",\n            \"line2\": \"Unit 907\",\n            \"city\": \"Austin\",\n            \"county\": \"Travis\",\n            \"zip\": \"78741\"\n        },\n        \"_id\": \"633bb78aeb4079e3330de91d\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"firstName\": \"Hank\",\n        \"middleName\": \"J\",\n        \"lastName\": \"Mikalson\",\n        \"email\": \"hankmikal@gmail.com\",\n        \"phoneNumbers\": [\n            \"8326472849\"\n        ],\n        \"createdAt\": \"2000-08-20T07:30:37.921Z\",\n        \"updatedAt\": \"2017-11-22T23:26:46.039Z\"\n    },\n    {\n        \"address\": {\n            \"line1\": \"11555 Bissonnet St\",\n            \"line2\": \"Unit 102\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77099\"\n        },\n        \"_id\": \"633bb7aeeb4079e3330de924\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"firstName\": \"Tim\",\n        \"middleName\": \"P\",\n        \"lastName\": \"Wellington\",\n        \"email\": \"wellingtontim@gmail.com\",\n        \"phoneNumbers\": [\n            \"8328493924\"\n        ],\n        \"createdAt\": \"1997-08-22T17:04:47.012Z\",\n        \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get intake by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/primaryData/id/633bb78aeb4079e3330de91d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						"id",
+						"633bb78aeb4079e3330de91d"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get intake by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/primaryData/id/633bb78aeb4079e3330de91d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								"id",
+								"633bb78aeb4079e3330de91d"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "382"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17e-X+64eBwuOxh43P/vzzVe85faMxw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:30:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"1300 Crossing PL\",\n            \"line2\": \"Unit 907\",\n            \"city\": \"Austin\",\n            \"county\": \"Travis\",\n            \"zip\": \"78741\"\n        },\n        \"_id\": \"633bb78aeb4079e3330de91d\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"firstName\": \"Hank\",\n        \"middleName\": \"J\",\n        \"lastName\": \"Mikalson\",\n        \"email\": \"hankmikal@gmail.com\",\n        \"phoneNumbers\": [\n            \"8326472849\"\n        ],\n        \"createdAt\": \"2000-08-20T07:30:37.921Z\",\n        \"updatedAt\": \"2017-11-22T23:26:46.039Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get intake entries by search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/primaryData/search?firstName=Hank&lastName=Mikalson&searchBy=name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						"search"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Hank"
+						},
+						{
+							"key": "lastName",
+							"value": "Mikalson"
+						},
+						{
+							"key": "searchBy",
+							"value": "name"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get intake entries by search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/primaryData/search?firstName=Hank&lastName=Mikalson&searchBy=name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								"search"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Hank"
+								},
+								{
+									"key": "lastName",
+									"value": "Mikalson"
+								},
+								{
+									"key": "searchBy",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "382"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17e-X+64eBwuOxh43P/vzzVe85faMxw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:33:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"1300 Crossing PL\",\n            \"line2\": \"Unit 907\",\n            \"city\": \"Austin\",\n            \"county\": \"Travis\",\n            \"zip\": \"78741\"\n        },\n        \"_id\": \"633bb78aeb4079e3330de91d\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"firstName\": \"Hank\",\n        \"middleName\": \"J\",\n        \"lastName\": \"Mikalson\",\n        \"email\": \"hankmikal@gmail.com\",\n        \"phoneNumbers\": [\n            \"8326472849\"\n        ],\n        \"createdAt\": \"2000-08-20T07:30:37.921Z\",\n        \"updatedAt\": \"2017-11-22T23:26:46.039Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get events for a client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/primaryData/events/Hank",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						"events",
+						"Hank"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get events for a client",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/primaryData/events/Hank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								"events",
+								"Hank"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"152-QNvF97Dh3A/CCLCryXljEkbRM7Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:34:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"address\": {\n            \"line1\": \"100 Main St\",\n            \"line2\": \"\",\n            \"city\": \"Houston\",\n            \"county\": \"Harris\",\n            \"zip\": \"77000\"\n        },\n        \"_id\": \"633bb702eb4079e3330de913\",\n        \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n        \"eventName\": \"Covid Vaccinations\",\n        \"services\": [\n            \"Facilitation\"\n        ],\n        \"date\": \"2002-06-24T08:38:40.850Z\",\n        \"description\": \"Get covid vaccination for free!\",\n        \"attendees\": [\n            \"Hank\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Create an intake",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Tim\",\r\n  \"middleName\": \"P\",\r\n  \"lastName\": \"Wellington\",\r\n  \"email\": \"wellingtontim@gmail.com\",\r\n  \"phoneNumbers\": [\r\n    \"8328493924\"\r\n  ],\r\n  \"address\": {\r\n    \"line1\": \"11555 Bissonnet St\",\r\n    \"line2\": \"Unit 102\",\r\n    \"city\": \"Houston\",\r\n    \"county\": \"Harris\",\r\n    \"zip\": \"77099\"\r\n  },\r\n  \"createdAt\": \"1997-08-22T17:04:47.012Z\",\r\n  \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/primaryData/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create an intake",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Tim\",\r\n  \"middleName\": \"P\",\r\n  \"lastName\": \"Wellington\",\r\n  \"email\": \"wellingtontim@gmail.com\",\r\n  \"phoneNumbers\": [\r\n    \"8328493924\"\r\n  ],\r\n  \"address\": {\r\n    \"line1\": \"11555 Bissonnet St\",\r\n    \"line2\": \"Unit 102\",\r\n    \"city\": \"Houston\",\r\n    \"county\": \"Harris\",\r\n    \"zip\": \"77099\"\r\n  },\r\n  \"createdAt\": \"1997-08-22T17:04:47.012Z\",\r\n  \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/primaryData/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "396"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18c-JTB9n1KysQzt26ohWFLgma4Ah4E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:36:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"633e5b5cdb0cd5ef494078d5\",\n    \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n    \"firstName\": \"Tim\",\n    \"middleName\": \"P\",\n    \"lastName\": \"Wellington\",\n    \"email\": \"wellingtontim@gmail.com\",\n    \"phoneNumbers\": [\n        \"8328493924\"\n    ],\n    \"address\": {\n        \"line1\": \"11555 Bissonnet St\",\n        \"line2\": \"Unit 102\",\n        \"city\": \"Houston\",\n        \"county\": \"Harris\",\n        \"zip\": \"77099\"\n    },\n    \"createdAt\": \"1997-08-22T17:04:47.012Z\",\n    \"updatedAt\": \"1997-08-22T17:04:47.012Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an intake",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Tim\",\r\n  \"middleName\": \"P\",\r\n  \"lastName\": \"Wellington\",\r\n  \"email\": \"wellingtontim@gmail.com\",\r\n  \"phoneNumbers\": [\r\n    \"8328493924\"\r\n  ],\r\n  \"address\": {\r\n    \"line1\": \"11555 Bissonnet St\",\r\n    \"line2\": \"Unit 102\",\r\n    \"city\": \"Houston\",\r\n    \"county\": \"Harris\",\r\n    \"zip\": \"77099\"\r\n  },\r\n  \"createdAt\": \"1997-08-22T17:04:47.012Z\",\r\n  \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/primaryData/633bb7aeeb4079e3330de924",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						"633bb7aeeb4079e3330de924"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an intake",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Tim\",\r\n  \"middleName\": \"P\",\r\n  \"lastName\": \"Wellington\",\r\n  \"email\": \"wellingtontim@gmail.com\",\r\n  \"phoneNumbers\": [\r\n    \"8328493924\"\r\n  ],\r\n  \"address\": {\r\n    \"line1\": \"11555 Bissonnet St\",\r\n    \"line2\": \"Unit 102\",\r\n    \"city\": \"Houston\",\r\n    \"county\": \"Harris\",\r\n    \"zip\": \"77099\"\r\n  },\r\n  \"createdAt\": \"1997-08-22T17:04:47.012Z\",\r\n  \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/primaryData/633bb7aeeb4079e3330de924",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								"633bb7aeeb4079e3330de924"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "388"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"184-bxmSHOVgPr+UKUunIP8Lu2WE8i0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:37:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"address\": {\n        \"line1\": \"11555 Bissonnet St\",\n        \"line2\": \"Unit 102\",\n        \"city\": \"Houston\",\n        \"county\": \"Harris\",\n        \"zip\": \"77099\"\n    },\n    \"_id\": \"633bb7aeeb4079e3330de924\",\n    \"organizationId\": \"633bb4cbeb4079e3330de90e\",\n    \"firstName\": \"Tim\",\n    \"middleName\": \"P\",\n    \"lastName\": \"Wellington\",\n    \"email\": \"wellingtontim@gmail.com\",\n    \"phoneNumbers\": [\n        \"8328493924\"\n    ],\n    \"createdAt\": \"1997-08-22T17:04:47.012Z\",\n    \"updatedAt\": \"1988-09-20T12:51:28.580Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an intake",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/primaryData/633e5be7eb4079e3330de950",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"primaryData",
+						"633e5be7eb4079e3330de950"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an intake",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/primaryData/633e5be7eb4079e3330de950",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"primaryData",
+								"633e5be7eb4079e3330de950"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-fgR5yLHQ1Hpp6zDESHaY9wJreYE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 04:39:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"deletedCount\": 1\n}"
+				}
+			]
+		}
+	]
+}
