@@ -6,12 +6,16 @@
       <h2 class="font-bold text-2xl text-black-700 tracking-widest text-center mt-10">Graph</h2>
       <DashGraph />
 
+      <h2 class="font-bold text-2xl text-black-700 tracking-widest text-center mt-10">Table</h2>
+      <DashTable />
+
     </div>
   </main>
 </template>
 
 <script>
 import DashGraph from './graph.vue'
+import DashTable from './table.vue'
 
 export default {
   methods: {
@@ -20,7 +24,8 @@ export default {
     },
   },
   components: {
-    DashGraph
+    DashGraph,
+    DashTable,
   }
 };
 </script>
