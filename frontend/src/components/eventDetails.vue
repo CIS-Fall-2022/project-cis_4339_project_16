@@ -311,7 +311,26 @@ export default {
   }
 }
 
+// ************** referred to https://vueformulate.com/guide/forms/error-handling/#form-input-errors
 
+<FormulateForm
+  :form-errors="['Sorry, an unexpected error occurred. Please try again soon.']"
+>
+  <FormulateInput
+    type="text"
+    name="st_address"
+    label="Street Address"
+  />
+  <FormulateInput
+    type="text"
+    name="city"
+    label="City"
+  />
+  <FormulateForm
+    type="submit"
+    label="Submit Order"
+  />
+</FormulateForm>
 
 };
 </script>
