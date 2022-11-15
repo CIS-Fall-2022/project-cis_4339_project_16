@@ -64,7 +64,7 @@ export default {
   name: "App",
   data() {
     return {
-    organizationName: "Blaze Monitors",
+    organizationName: "Organization Name",
     }
   },
   mounted() {
