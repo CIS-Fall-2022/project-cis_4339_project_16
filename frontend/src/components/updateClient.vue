@@ -142,6 +142,29 @@ export default {
     };
   },
 };
+
+
+// for success - green box
+toastr.success('Success messages');
+
+// for errors - red box
+toastr.error('errors messages');
+
+// for warning - orange box
+toastr.warning('warning messages');
+
+// for info - blue box
+toastr.info('info messages');
+
+toastr.error("Unable to Update Client Record","Your Title",{timeOut: 5000});
+
+$.toast({
+    heading: 'Error',
+    text: 'An unexpected error occured while trying to update the client record.',
+    icon: 'error'
+})
+
+
 </script>
 <template>
   <main>
@@ -185,6 +208,7 @@ export default {
               />
             </label>
           </div>
+
 
           <!-- form field -->
           <div class="flex flex-col">

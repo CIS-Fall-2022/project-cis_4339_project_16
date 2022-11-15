@@ -324,6 +324,29 @@ export default {
       this.$router.push({ name: "updateclient", params: { id: clientID } });
     },
   },
+
+
+  // for success - green box
+toastr.success('Success messages');
+
+// for errors - red box
+toastr.error('errors messages');
+
+// for warning - orange box
+toastr.warning('warning messages');
+
+// for info - blue box
+toastr.info('info messages');
+
+toastr.error("Unable to Delete Event Record","Your Title",{timeOut: 5000});
+
+$.toast({
+    heading: 'Error',
+    text: 'An unexpected error occured while trying to delete the event.',
+    icon: 'error'
+})
+
+
   // sets validations for the various data properties
   validations() {
     return {
