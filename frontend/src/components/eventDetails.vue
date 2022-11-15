@@ -325,7 +325,16 @@ export default {
     },
   },
 
+// *************referred to https://qcode.in/api-error-handling-in-vue-with-axios/
 
+axios.get('/user').then((response) => {
+    console.log('Event not successfully deleted.');
+}).catch((error) => {
+    console.warn('Error when deleting Event :(');
+})
+
+
+// **************referred to https://www.folkstalk.com/2022/09/toast-error-with-code-examples.html
   // for success - green box
 toastr.success('Success messages');
 

@@ -143,7 +143,15 @@ export default {
   },
 };
 
+// *************referred to https://qcode.in/api-error-handling-in-vue-with-axios/
 
+axios.get('/user').then((response) => {
+    console.log('Client not successfully updated.');
+}).catch((error) => {
+    console.warn('Error when updating client :(');
+})
+
+// **************referred to https://www.folkstalk.com/2022/09/toast-error-with-code-examples.html
 // for success - green box
 toastr.success('Success messages');
 
