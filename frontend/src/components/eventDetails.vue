@@ -287,5 +287,31 @@ export default {
       },
     };
   },
+
+
+// ***************referred to https://stackoverflow.com/questions/66649409/validate-duplicate-data-entry-in-array-javascript
+// for error validation
+export default {
+  data() {
+    return {
+      seenAddresses: {}
+    }
+  },
+  methods: {
+    insertItem(item) {
+      const { Address, State, City } = item
+      const key = JSON.stringify({ Address, State, City })
+      const seen = this.seenAddresses[key]
+
+      if (!seen) {
+        this.seenAddresses[key] = item
+        this.addresses.push(item)
+      }
+    }
+  }
+}
+
+
+
 };
 </script>
