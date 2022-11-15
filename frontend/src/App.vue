@@ -48,7 +48,7 @@
           background: linear-gradient(250deg, #C8102E 70%, #efecec 50.6%);
         "
       >
-        <h1 class="mr-20 text-3xl text-white">Dataplatform</h1>
+        <h1 class="mr-20 text-3xl text-white">{{organizationName}}</h1>
       </section>
       <div>
         <router-view></router-view>
@@ -58,9 +58,26 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "App",
+  data() {
+    return {
+    organizationName: "Blaze Monitors",
+    }
+  },
+  mounted() {
+   let apiURL = import.meta.env.VITE_ROOT_API + `/organizationData/name`;
+    this.organizationName = "Organization Name";
+    axios.get(apiURL).then((resp) => {
+      console.log(resp.data)
+      this.organizationName = resp?.data?.name;
+    });
+  },
 };
+
+
 </script>
 
 <style>
