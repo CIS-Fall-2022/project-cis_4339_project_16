@@ -4,7 +4,6 @@ import { required, email, alpha, numeric } from "@vuelidate/validators";
 import VueMultiselect from "vue-multiselect";
 import axios from "axios";
 import { DateTime } from "luxon";
-
 export default {
   props: ["id"],
   components: { VueMultiselect },
@@ -98,8 +97,23 @@ export default {
     handleClientUpdate() {
       let apiURL = import.meta.env.VITE_ROOT_API + `/primarydata/${this.id}`;
       axios.put(apiURL, this.client).then(() => {
-        alert("Update has been saved.");
+
+        this.$toast.open({
+          message: "Client has been updated.",
+          type: "success",
+          duration: 5000,
+          dismissible: true
+        })
+
         this.$router.back().catch((error) => {
+
+          this.$toast.open({
+            message: "Failed to update client.",
+            type: "warning",
+            duration: 5000,
+            dismissible: true
+          })
+
           console.log(error);
         });
       });
@@ -107,8 +121,23 @@ export default {
     handleClientDelete() {
       let apiURL = import.meta.env.VITE_ROOT_API + `/primarydata/${this.id}`;
       axios.delete(apiURL, this.client).then(() => {
-        alert("Client has been deleted.");
+
+        this.$toast.open({
+          message: "Client has been deleted.",
+          type: "success",
+          duration: 5000,
+          dismissible: true
+        })
+
         this.$router.back().catch((error) => {
+
+          this.$toast.open({
+            message: "Failed to delete client.",
+            type: "warning",
+            duration: 5000,
+            dismissible: true
+          })
+
           console.log(error);
         });
       });
@@ -150,63 +179,6 @@ export default {
       },
     };
   },
-
-// ***************referred to https://stackoverflow.com/questions/66649409/validate-duplicate-data-entry-in-array-javascript
-// for error validation
-export default {
-  data() {
-    return {
-      seenAddresses: {}
-    }
-  },
-  methods: {
-    insertItem(item) {
-      const { Address, State, City } = item
-      const key = JSON.stringify({ Address, State, City })
-      const seen = this.seenAddresses[key]
-
-      if (!seen) {
-        this.seenAddresses[key] = item
-        this.addresses.push(item)
-      }
-    }
-  }
-}
-
-// ************** referred to https://vueformulate.com/guide/forms/error-handling/#form-input-errors
-
-<FormulateForm
-  :form-errors="['Sorry, an unexpected error occurred. Please try again soon.']"
->
-  <FormulateInput
-    type="text"
-    name="st_address"
-    label="Street Address"
-  />
-  <FormulateInput
-    type="text"
-    name="city"
-    label="City"
-  />
-  <FormulateForm
-    type="submit"
-    label="Submit Order"
-  />
-</FormulateForm>
-
-// ************** referred to https://vuejsdevelopers.com/2018/08/27/vue-js-form-handling-vuelidate/
-
-<div class="form-group" :class="{ 'hasError': v.$error }">
-  <label class="mr-2 font-bold text-grey">Email</label>
-  <input type="email" class="input" v-model="email" placeholder="user@yahoo.com" @input="v.$touch()">
-  <div class="text-sm mt-2 text-red" v-if="v.$error">
-    <div v-if="!v.required">Email is required</div>
-    <div v-if="!v.notGmail">Email should not be a Gmail one</div>
-    <div v-if="!v.isEmailAvailable">Email is not available (less than 10 char)</div>
-    <div v-if="!v.email">Email is not a properly formatted email address</div>
-  </div>
-</div>
-
 };
 </script>
 <template>
